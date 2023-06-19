@@ -1,0 +1,42 @@
+"""
+Priskirimo operatoriai:
+= priskirimas reiksmei
++= prideda ir priskiria reiksme
+-= atima ir priskiria reiksme
+*
+/
+%= liekana
+
+Matematiniai operatoriai
++
+-
+*
+/
+%
+** kelimas laipsniu
+// sveikoji dalyba
+
+Palyginimo operatoriai
+==lygu
+!= nelygu
+>
+<
+>=
+<=
+
+
+Loginiai operatoriai
+and
+or
+not
+
+Membership operatoriai
+in (priklauso)
+not in (nepriklauso)
+
+Identity operatoriai (tapatumo)
+
+is
+is not
+
+"""
