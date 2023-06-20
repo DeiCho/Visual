@@ -9,7 +9,7 @@ class StudentuValdymoSistema:
         self.studentai = []
 
     def prideti_studenta(self, studento_id, vardas, pavarde):
-        tudentas = Studentas(studento_id, vardas, pavarde)
+        studentas = Studentas(studento_id, vardas, pavarde)
         self.studentai.append(studentas)
         print(f"Studentas '{vardas} {pavarde}' pridėtas.")
 
@@ -30,7 +30,7 @@ class StudentuValdymoSistema:
     def rodyti_studentus(self):
         print("Visi studentai:")
         for studentas in self.studentai:
-            rint(f"ID: {studentas.studento_id}, Vardas: {studentas.vardas}, Pavardė: {studentas.pavarde}")
+            print(f"ID: {studentas.studento_id}, Vardas: {studentas.vardas}, Pavardė: {studentas.pavarde}")
 
 # Sukuriam studentų valdymo sistemos objektą
 sistema = StudentuValdymoSistema()
