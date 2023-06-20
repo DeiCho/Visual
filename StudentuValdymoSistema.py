@@ -1,84 +1,98 @@
-"""Objektinis programavimas"""
-
 class Studentas:
-    # Kuriamas konstruktorius
+    def __init__(self, studento_id, vardas, pavarde):
+        self.studento_id = studento_id
+        self.vardas = vardas
+        self.pavarde = pavarde
+
+class StudentuValdymoSistema:
     def __init__(self):
-        # sukuriamos tuscias masyvas(listas), kuriame talpinsime visus studentu numerius
-        self.studentuSarasas = []
+        self.studentai = []
 
-        #kuriame metoda "naujas studentas"
+    def prideti_studenta(self, studento_id, vardas, pavarde):
+        tudentas = Studentas(studento_id, vardas, pavarde)
+        self.studentai.append(studentas)
+        print(f"Studentas '{vardas} {pavarde}' pridėtas.")
 
-    def naujas_studentas(self, vardas, pavarde, studento_numeris):
-        #inicijuojame saskaitos parametrus
-        studento_info = {
-            "vardas": vardas,
-            "pavarde": pavarde,
-            "studento_numeris": studento_numeris
-            }
-            # pridedame saskaita
-        self.studentai.append(studento_info)
-        print("Naujas studentas sekmingai sukurtas")
+    def pasalinti_studenta(self, studento_id):
+        for studentas in self.studentai:
+            if studentas.studento_id == studento_id:
+                self.studentai.remove(studentas)
+                print(f"Studentas '{studentas.vardas} {studentas.pavarde}' pašalintas.")
+            return
+        print("Studentas su tokiu ID nerastas.")
 
-        #studento pridejimas
-    def kito_studento_pridejiamas(self.studentuSarasas):
-        naujas_sarasas = []
-        for naujas_studentas in self.studentuSarasas:
-            # jei studentas nerastas, pridesime prie naujo saraso
-            if naujas_studentas not in naujas_sarasas:
-                naujas_sarasas.append(naujas_studentas)
-                print("Stundetas sekmingai pridetas")
-                break
-            else:
-                print("Nepavyko prideti naujo studento!")
+    def gauti_studenta_pagal_id(self, studento_id):
+        for studentas in self.studentai:
+            if studentas.studento_id == studento_id:
+                return studentas
+        return None
 
-    def isemimas(self, studento_numeris):
-        for naujas_studentas in self.studentuSarasas:
-         #jei sutdentas rastas isimsime ji is saraso
-            if naujas_studentas["studento_numeris"] == studento_numeris:
-                print("Studentas sekmingai isimtas")
-            else:
-                print("Nepavyko rasti saskaitos su nuroytu numeriu!")
+    def rodyti_studentus(self):
+        print("Visi studentai:")
+        for studentas in self.studentai:
+            rint(f"ID: {studentas.studento_id}, Vardas: {studentas.vardas}, Pavardė: {studentas.pavarde}")
 
-    def visas_sarasas(self, studento_numeris):
-        for naujas_studentas in self.studentuSarasas:
-            if saskaita["studento_numeris"] == saskaitos_numeris:
-                print(f"Saskaitos Balansas: {saskaita['balansas']} €")
-                break
-            else:
-                print("Nepavyko rasti saskaitos su nurodytu numeriu!")
+# Sukuriam studentų valdymo sistemos objektą
+sistema = StudentuValdymoSistema()
 
-#sukuriame objekta
-vuSarasai = Studentas()
-
-# naudojame while cikla ir leidziame klinetui pasirinkti norima operacija
+# Meniu
 while True:
-     print("Pasirinkite norima operacija --> ")
-     print("1. Sukurti nauja studenta")
-     print("2. Ivesti studentuo duomenis")
-     print("3. Isimti studenta is saraso")
-     print("4. Patikrinti studentu sarasa")
-     print("0. Baigti operacijas ")
-     pasirinkimas = input("Iveskite pasirinkimo numeri -->" )
-     
-     #inicijuojame operacijas
-     if pasirinkimas == "1":
-          vardas = input("Iveskite varda --> ")
-          pavarde = float(input("Iveskite pradini balansa --> "))
-          numeris = input("Iveskite saskaitos numeri --> ")
-          # gauname varda ir pradini balansa
-          sebBankas.nauja_saskaita(vardas, pavarde, numeris)
-     elif pasirinkimas == "2":
-          numeris = input("Iveskite saskaitos numeri --> ")
-          suma = float(input("Iveskite inesama suma --> "))
-          sebBankas.balanso_didinimas(numeris, suma)
-     elif pasirinkimas == "3":
-          numeris = input("Iveskite saskaitos numeri --> ")
-          suma = float(input("Iveskite isimama suma --> "))
-          sebBankas.isemimas(numeris, suma)
-     elif pasirinkimas == "4":
-          numeris = input("Iveskite saskaitos numeri --> ")
-          sebBankas.balansas(numeris)
-     elif pasirinkimas == "0":
-          break
-     else:
-          print("Neteisingas pasirinkimas! Bandykite dar karta.")
+    print("Studentų valdymo sistema")
+    print("1. Pridėti naują studentą")
+    print("2. Pašalinti studentą")
+    print("3. Gauti informaciją apie studentą pagal ID")
+    print("4. Rodyti visus studentus")
+    print("5. Baigti programą")
+
+    pasirinkimas = input("Įveskite pasirinkimo numerį: ")
+
+    if pasirinkimas == "1":
+        studento_id = input("Įveskite studento ID: ")
+        vardas = input("Įveskite studento vardą: ")
+        pavarde = input("Įveskite studento pavardę: ")
+        sistema.prideti_studenta(studento_id, vardas, pavarde)
+    elif pasirinkimas == "2":
+        studento_id = input("Įveskite studento ID: ")
+        sistema.pasalinti_studenta(studento_id)
+    elif pasirinkimas == "3":
+        studento_id = input("Įveskite studento ID: ")
+        studentas = sistema.gauti_studenta_pagal_id(studento_id)
+        if studentas:
+            print(f"Studentas: {studentas.vardas} {studentas.pavarde}")
+        else:
+            print("Studentas su tokiu ID nerastas.")
+    elif pasirinkimas == "4":
+        sistema.rodyti_studentus()
+    elif pasirinkimas == "5":
+        break
+    else:
+        print("Neteisingas pasirinkimas. Bandykite dar kartą.")
+
+print("Programa baigta.")
+
+
+"""
+1.Sukuriamos dvi klases: Studentas ir StudentuValdymoSistema.
+
+2.Studentas klasė turi tris atributus: studento_id, vardas ir pavarde. Jie nurodomi konstruktoriuje __init__() ir priskiriami objekto kintamiesiems.
+
+3.StudentuValdymoSistema klasė turi vieną atributą studentai, kuris yra sąrašas, skirtas saugoti visus studentus. Jis inicijuojamas tuščiu sąrašu konstruktoriuje.
+
+4.StudentuValdymoSistema klasė taip pat turi kelis metodus:
+
+prideti_studenta() metodas priima studento informaciją (ID, vardą, pavardę), sukuria naują Studentas objektą ir prideda jį į studentai sąrašą.
+pasalinti_studenta() metodas priima studento ID ir ieško studento sąraše. Jei randa studentą, jį pašalina iš sąrašo.
+gauti_studenta_pagal_id() metodas priima studento ID ir ieško studento sąraše. Jei randa studentą, jį grąžina, kitu atveju grąžina None.
+rodyti_studentus() metodas atspausdina visus studentus esančius studentai sąraše.
+
+5.Sukuriamas StudentuValdymoSistema objektas vardu sistema.
+
+6.Įgyvendinamas meniu, kuris leidžia vartotojui pasirinkti veiksmą:
+
+Pasirinkus "1", vartotojas įveda studento informaciją, kuri yra perduodama prideti_studenta() metodui.
+Pasirinkus "2", vartotojas įveda studento ID, kuris yra perduodamas pasalinti_studenta() metodui.
+Pasirinkus "3", vartotojas įveda studento ID, kuris yra perduodamas gauti_studenta_pagal_id() metodui. Jei studentas rastas, atspausdinama jo informacija, kitu atveju pranešimas, kad studentas su tokiu ID nerastas.
+Pasirinkus "4", iškviečiamas rodyti_studentus() metodas, kad atspausdintų visus studentus.
+Pasirinkus "5", programa baigia darbą.
+
+7.Programa vykdo pasirinkimą, kol vartotojas pasirenka "5" baigti programą."""

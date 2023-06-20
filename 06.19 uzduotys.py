@@ -88,10 +88,10 @@ Pridėkite funkcionalumą, kad galėtumėte pridėti knygas į sąrašą ir atsp
 
 
 """ Atspausdinti is * trikampi """
-aukstis = 5
-eilutes = aukstis + 1
-for i in range(1, eilutes + 1): #kiekvienam zingsnyje ima nauja eilute iki 5
-    print(" " * (eilutes - i), end="") #printina tiek tarpu kiek yra eiluciu
-    print("*" * (2 * i - 1))    
-print(" " * (eilutes - 1), end="")
-print("|") #padaugina tarpus is 5 (eulute -1) t.y. 5+1-1
+# aukstis = 5
+# eilutes = aukstis + 1
+# for i in range(1, eilutes + 1): #kiekvienam zingsnyje ima nauja eilute iki 5
+#     print(" " * (eilutes - i), end="") #printina tiek tarpu kiek yra eiluciu
+#     print("*" * (2 * i - 1))    
+# print(" " * (eilutes - 1), end="")
+# print("|") #padaugina tarpus is 5 (eulute -1) t.y. 5+1-1
