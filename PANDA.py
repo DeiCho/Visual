@@ -7,14 +7,14 @@ import matplotlib.pyplot as plt
 
 
 """         dvimate duomenu struktura(saugo duomenis lenteles pavidalu su stulpeliu ir eiluciu indeksais)"""
-# data = {
-#     'Name': ['Mantas', 'Deividas', 'Migle', 'Ausrine'],
-#     'Age': [29, 27, 24, 45],
-#     'City': ['Marijampole', 'Vilnius', 'Kaunas', 'Vilnius']
-#     }
+data = {
+    'Name': ['Mantas', 'Deividas', 'Migle', 'Ausrine'],
+    'Age': [29, 27, 24, 45],
+    'City': ['Marijampole', 'Vilnius', 'Kaunas', 'Vilnius']
+    }
 
-# df = pd.DataFrame(data) #df - dataframe, reiskia kad printinsim lentele
-# print(df)
+df = pd.DataFrame(data) #df - dataframe, reiskia kad printinsim lentele
+print(df)
 
 # print(df.head()) #skliausteliu viduje nurodyti kiek norime matyti eiluciu, tiek ir atvaizduos
 
@@ -36,8 +36,8 @@ import matplotlib.pyplot as plt
 # print(f"Average age: {average_age}")
 
 """         filtruojame pagal nurodyta salyga   (siuo atveju metai)"""
-# filtered_data = df[df['Age'] > 25][['Name', 'Age']] #dar pridejus skliaustelius atskirs name ir age
-# print(filtered_data)
+filtered_data = df[df['Age'] > 25][['Name', 'Age']] #dar pridejus skliaustelius atskirs name ir age
+print(filtered_data)
 
 
 
@@ -58,7 +58,7 @@ group_stats = df.groupby('FIRST_NAME')['SALARY'].describe() #describe sukuria st
 group_max = df.groupby('FIRST_NAME')['SALARY'].max() #atfiltruoja is visu vardu max atlyginimus
 # print(group_max)
 
-group_agg = df.groupby('FIRST_NAME').agg({'SALARY': ['sum', 'mean', 'max', 'size']}) #agreguoja suma, vidurki ir max algas ir dar size parodo kiek vardu buvo
+# group_agg = df.groupby('FIRST_NAME').agg({'SALARY': ['sum', 'mean', 'max', 'size']}) #agreguoja suma, vidurki ir max algas ir dar size parodo kiek vardu buvo
 # print(group_agg)
 
 

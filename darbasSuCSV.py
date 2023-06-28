@@ -35,7 +35,7 @@ df = pd.read_csv('employees.csv')
 # print(df)
 
 # * Redaguoti duomenų tipus, pvz., konvertuoti skaičių tipo stulpelius į datų tipo stulpelius arba atvirkščiai.
-
+# print(df.head())
 
 
 # * Atlikti duomenų filtravimą, rūšiavimą ir sujungimą pagal sąlygas arba stulpelius.
