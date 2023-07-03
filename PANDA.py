@@ -36,8 +36,8 @@ print(df)
 # print(f"Average age: {average_age}")
 
 """         filtruojame pagal nurodyta salyga   (siuo atveju metai)"""
-filtered_data = df[df['Age'] > 25][['Name', 'Age']] #dar pridejus skliaustelius atskirs name ir age
-print(filtered_data)
+# filtered_data = df[df['Age'] > 25][['Name', 'Age']] #dar pridejus skliaustelius atskirs name ir age
+# print(filtered_data)
 
 
 

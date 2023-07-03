@@ -95,3 +95,12 @@ Pridėkite funkcionalumą, kad galėtumėte pridėti knygas į sąrašą ir atsp
 #     print("*" * (2 * i - 1))    
 # print(" " * (eilutes - 1), end="")
 # print("|") #padaugina tarpus is 5 (eulute -1) t.y. 5+1-1
+
+# x = 10
+# y = 3
+# result = x / y 
+# print(result)
+
+# my_list = [1, 2, 3, 4, 5]
+# result = my_list[2:4]
+# print(result)
