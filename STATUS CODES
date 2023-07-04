@@ -1,0 +1,6 @@
+200 = OK
+301 = redirect
+302 = Found file location
+404 not Found
+403 forbiden error
+500 server error
