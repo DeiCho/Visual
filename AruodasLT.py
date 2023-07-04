@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import matplotlib.pyplot as plt
 import time
-from db_config import create_table, insert_query, db_params, take_database_info
+from psydb_config import create_table, insert_query, db_params, take_database_info
 
 
 
