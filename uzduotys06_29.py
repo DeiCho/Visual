@@ -40,12 +40,12 @@ from students_db import create_table, insert_query, db_params
      duomenų bazės "students" lentelę.
      [+] Papildoma sąlyga: Įrašykite duomenis į "students" lentelę tik tuomet, jei amžius yra didesnis nei 20."""
 
-def load_data():
-     data = pd.read_csv('duomenys.csv')
-     filtered_data = data[data['amzius'] > 20]
-     df = pd.DataFrame(filtered_data)
-     return df
+# def load_data():
+#      data = pd.read_csv('duomenys.csv')
+#      filtered_data = data[data['amzius'] > 20]
+#      df = pd.DataFrame(filtered_data)
+#      return df
 
 
-create_table()
-insert_query()
+# create_table()
+# insert_query()
