@@ -91,4 +91,4 @@ from sklearn.metrics import mean_squared_error
 # #   atvaizduojame prognozes ir tikras reksmes naudojant regresijos diagrama
 # df = pd.DataFrame({'Predicted price': y_pred, 'Actual price': y_test})
 # sns.regplot(x='Actual price', y='Predicted price', data=df)
-# plt.show()
+# plt.show()hjg
